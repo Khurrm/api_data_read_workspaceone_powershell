@@ -13,4 +13,9 @@ Set-Variable -Name "counter"
 $pair = "${user}:${pass}" 
 $bytes = [System.Text.Encoding]::ASCII.GetBytes($pair)
 $base64 = [Convert]::ToBase64String($bytes)
+$encodedCredentials = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes($pair))
+write-host ( " the pair value is as follow {0}" -f $encodedCredentials ) 
+
+$pair
+
 
