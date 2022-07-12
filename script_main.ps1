@@ -18,4 +18,17 @@ write-host ( " the pair value is as follow {0}" -f $encodedCredentials )
 
 $pair
 
+$bytes = [System.Text.Encoding]::ASCII.GetBytes($pair)
+$base64 = [Convert]::ToBase64String($bytes)
+$Accept = "application/json"
+$headers = @{ "Authorization" ="Basic $base64"; "aw-tenant-code"=$tenant1; "Content-Type"='application/json' ; "Accept"= "application/json"} 
+
+#Defining temporary variables
+$headers
+$pagecount = 0;
+$array1 = @()
+$total = 0
+
+
+
 
