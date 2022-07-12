@@ -29,6 +29,9 @@ $pagecount = 0;
 $array1 = @()
 $total = 0
 
+#Defining URL that have to be accessed.
+#Note the Instance name is Obfuscated as it is unique. The rest of URL is the same for all Customers using these APIs. 
+$url= 'https://XXXX.awmdm.com/api/mdm/devices/bulksettings'
 
 
 
