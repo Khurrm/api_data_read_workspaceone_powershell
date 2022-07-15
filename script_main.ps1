@@ -35,6 +35,9 @@ $url= 'https://XXXX.awmdm.com/api/mdm/devices/bulksettings'
 $urlbase='https://XXXX.awmdm.com/api/mdm/devices/search?platform=Apple&page=0'
 $Output = Invoke-RestMethod -uri $urlbase -Method Get -Headers $headers -UseBasicParsing 
 
+#500 is the limit of one response. This is just dividing with the total output to determine the loop
+$total = ($Output.Total / 500)
+
 
 
 
