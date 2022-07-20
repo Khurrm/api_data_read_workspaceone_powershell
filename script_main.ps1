@@ -41,6 +41,8 @@ $total = ($Output.Total / 500)
 $total1 = [math]::floor($total)
 
 
+$Output = Invoke-RestMethod -uri $url1 -Method Get -Headers $headers -UseBasicParsing 
+
 
 
 
