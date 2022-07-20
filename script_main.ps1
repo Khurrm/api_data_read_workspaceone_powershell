@@ -38,6 +38,10 @@ $Output = Invoke-RestMethod -uri $urlbase -Method Get -Headers $headers -UseBasi
 #500 is the limit of one response. This is just dividing with the total output to determine the loop
 $total = ($Output.Total / 500)
 
+$total1 = [math]::floor($total)
+
+
+
 
 
 
