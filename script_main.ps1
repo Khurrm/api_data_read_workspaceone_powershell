@@ -43,6 +43,13 @@ $total1 = [math]::floor($total)
 
 $Output = Invoke-RestMethod -uri $url1 -Method Get -Headers $headers -UseBasicParsing 
 
+$url1='https://XXXX.awmdm.com/api/mdm/devices/search?platform=Apple&page=' + $pagecount
+
+
+$pagecount =$pagecount + 1;
+#Just checking the value
+$pagecount
+
 
 
 
