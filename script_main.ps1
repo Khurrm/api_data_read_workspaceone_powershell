@@ -40,6 +40,7 @@ $total = ($Output.Total / 500)
 
 $total1 = [math]::floor($total)
 
+do {
 
 $Output = Invoke-RestMethod -uri $url1 -Method Get -Headers $headers -UseBasicParsing 
 
@@ -50,7 +51,7 @@ $pagecount =$pagecount + 1;
 #Just checking the value
 $pagecount
 
-
+} while ($pagecount -le $total1)
 
 
 
