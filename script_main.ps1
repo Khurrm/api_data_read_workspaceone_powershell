@@ -51,6 +51,11 @@ $pagecount =$pagecount + 1;
 #Just checking the value
 $pagecount
 
+#Adding a loop
+for($oo= 0; $oo -lt $Output.Devices.Length;$oo++){
+	
+}
+
 } while ($pagecount -le $total1)
 
 
