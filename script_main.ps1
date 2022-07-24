@@ -53,7 +53,15 @@ $pagecount
 
 #Adding a loop
 for($oo= 0; $oo -lt $Output.Devices.Length;$oo++){
-	
+	#if (( $Output.Devices[$oo].LocationGroupId[0].Name -ieq "FullXXX") -or ($Output.Devices[$oo].LocationGroupId[0].Name -ieq "FullXXX") -or ($Output.Devices[$oo].LocationGroupId[0].Name -ieq "XXXX") ) {
+ $Appledata = New-Object PSObject
+ $Appledata | Add-Member  -type NoteProperty -name "Serial Number" -Value $($Output.Devices[$oo].SerialNumber)
+ $Appledata | Add-Member  -type NoteProperty -name "IMEI" -Value $($Output.Devices[$oo].Imei)
+ $Appledata | Add-Member  -type NoteProperty -name "User Name" -Value $($Output.Devices[$oo].UserName)
+ $Appledata | Add-Member  -type NoteProperty -name "User Mail" -Value $($Output.Devices[$oo].UserEmailAddress)
+ $Appledata | Add-Member  -type NoteProperty -name "Model" -Value $($Output.Devices[$oo].Model)
+ $Appledata | Add-Member  -type NoteProperty -name "OS" -Value $($Output.Devices[$oo].OperatingSystem)
+
 }
 
 } while ($pagecount -le $total1)
