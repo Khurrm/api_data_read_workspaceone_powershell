@@ -71,6 +71,13 @@ $Appledata | Add-Member  -type NoteProperty -name "Enrollment Date" -Value $($da
  $Appledata | Add-Member  -type NoteProperty -name "Device Last Seen" -Value $($datecheck1.ToString('dd.MM.yyyy'))
  $Appledata | Add-Member  -type NoteProperty -name "Organization Group Name" -Value $($Output.Devices[$oo].LocationGroupName)
  
+ [DateTime]$DaysSinceLastSeenTemp = $Output.Devices[$oo].LastSeen
+ $dft1 = Get-Date
+ $qwert = $dft1.Date - $DaysSinceLastSeenTemp.Date
+ #$qwert.TotalDays
+ $Appledata | Add-Member  -type NoteProperty -name "Last seen(days)" -Value $($qwert.TotalDays)
+
+ 
 
 }
 
