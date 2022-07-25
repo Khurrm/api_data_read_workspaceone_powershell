@@ -61,6 +61,16 @@ for($oo= 0; $oo -lt $Output.Devices.Length;$oo++){
  $Appledata | Add-Member  -type NoteProperty -name "User Mail" -Value $($Output.Devices[$oo].UserEmailAddress)
  $Appledata | Add-Member  -type NoteProperty -name "Model" -Value $($Output.Devices[$oo].Model)
  $Appledata | Add-Member  -type NoteProperty -name "OS" -Value $($Output.Devices[$oo].OperatingSystem)
+ $Appledata | Add-Member  -type NoteProperty -name "Ownership" -Value $($Output.Devices[$oo].Ownership)
+ #$Appledata | Add-Member  -type NoteProperty -name "PhoneNumber" -Value $($Output.Devices[$oo].PhoneNumber)
+[DateTime]$datecheck = $Output.Devices[$oo].LastEnrolledOn;
+$Appledata | Add-Member  -type NoteProperty -name "Enrollment Date" -Value $($datecheck.ToString('dd.MM.yyyy'))
+ # $Appledata | Add-Member  -type NoteProperty -name "DeviceLastSeen" -Value $($dd.Devices[$oo].LastSeen)
+  #[DateTime]$datacheck = Get-Date;
+  [DateTime]$datecheck1 = $Output.Devices[$oo].LastSeen;
+ $Appledata | Add-Member  -type NoteProperty -name "Device Last Seen" -Value $($datecheck1.ToString('dd.MM.yyyy'))
+ $Appledata | Add-Member  -type NoteProperty -name "Organization Group Name" -Value $($Output.Devices[$oo].LocationGroupName)
+ 
 
 }
 
