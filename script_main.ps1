@@ -83,6 +83,8 @@ $Appledata | Add-Member  -type NoteProperty -name "Enrollment Date" -Value $($da
 
 } while ($pagecount -le $total1)
 
+###################################
+####do while whereas total < $Output.Total
+################ Total Devices = XXXX
 
-
-
+$results | Export-Csv -Path .\iosdata.csv -Delimiter ',' -NoTypeInformation
